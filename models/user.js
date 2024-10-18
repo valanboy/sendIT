@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 const userSchema = new mongoose.Schema({
-        username:{
+     username:{
             type: String,
     },
       email:{
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
      userSchema.pre('save', async function(next){
         try{
             const salt = await bcrypt.genSalt()
-            this.password = await bcrypt.hashpassword(this.password, salt)
+            this.password = await bcrypt.hash(this.password, salt)
             console.log("password is hashed just before saving this user")
             next()
         }catch(error){

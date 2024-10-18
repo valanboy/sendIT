@@ -1,12 +1,14 @@
 const user = require("../models/user");
 const jwt = require("jsonwebtoken")
-const JwtSecret = process.env.JwtSecret
+require('dotenv').config()
+const JwtSecret =  "garri4me" //env not loading properly but will crosscheck
+const bcrypt = require('bcryptjs')
 
 //create json token that we can call later in this script
 const maxAge = 2 * 24 * 60 * 60
 const createToken = (id) => {
 
-    return jwt.sign({ id }, JwtSecret, {
+    return jwt.sign({ id } , JwtSecret, {
         expiresIn: maxAge
     })
 }
@@ -36,7 +38,7 @@ const signup_POST = async (req, res) => {
     try {
 
         //check if the email already exists in the database
-        const userExist = await user.find({ email: email });
+        const userExist = await user.findOne({ email: email });
         if (userExist) {
             res.render("signup", {
                 error: "email already exist",
@@ -45,7 +47,7 @@ const signup_POST = async (req, res) => {
 
             //create a user in database
             const User = await user.create({ email, username, password })
-
+            console.log(JwtSecret)
             //create a user with the callback function initialized at the start of this file
             const token = createToken(User._id)
 
@@ -65,12 +67,12 @@ const signin_POST = async (req, res) => {
     let { email, password } = req.body
 
     //check database to find user
-    const User = await user.find({email: email})
+    const User = await user.findOne({email: email})
 
     //if no user is found throw an error and rerender signin page
     if(!User){
         res.render('signin',{
-            error: 'user not found, please sign in'
+            error: 'user not found, please sign up'
         })
     }
 
@@ -113,6 +115,11 @@ const dashboard = async (req, res)=>{
    })
 }
 
+const signout = async (req, res)=>{
+res.cookie('jwt', " ", {maxAge: 1})
+res.redirect("/")
+}
+
 module.exports = {
     home_GET,
     whatsapp_GET,
@@ -120,5 +127,6 @@ module.exports = {
     signup_GET,
     signin_POST,
     signup_POST,
-    dashboard
+    dashboard,
+    signout
 };
