@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>SENDIT</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img class="logo" src="Images/logo1.jpg" />
+
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Corprate</a></li>
+          <li><a href="/">Agent network</a></li>
+          <li><a href="/">contact</a></li>
+          <li><a href="/">News</a></li>
+          <li><a href="/">Riders</a></li>
+        </ul>
+
+        <ul class="menu">
+          <li class="getstarted"><a href="/signup">GET STARTED</a></li>
+          <li class="signin"><a href="/signin">SIGN IN</a></li>
+        </ul>
+
+        <div class="toggle_button">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+
+      </nav>
+    </header>
+    
+    <div class="dropdown_menu">
+      <li><a href="/">Home</a></li>
+        <li><a href="/">Corprate</a></li>
+        <li><a href="/">Agent network</a></li>
+        <li><a href="/">contact</a></li>
+        <li><a href="/">News</a></li>
+        <li><a href="/">Riders</a></li>
+        <li class="started"><a href="/signup">GET STARTED</a></li>
+        <li class="sign-in"><a href="/signin">SIGN IN</a></li>
+     </div>
+
+    <section class="herosection">
+      <article>
+        <p class="herocontent">
+          <span class="herocontentEm">SENDIT</span><br />the number one place for on demand logistic services in africa
+        </p>
+        <a href="/whatsapp"><img class="whatsapplogo" src="Images/whatsapp.png"/></a>
+      </article>
+
+      <div class="heroimage">
+        <img
+          class="homeimage"
+          alt="mobile image"
+          src="Images/mockup_kwik-15.34.12.png"
+        />
+      </div>
+
+      <!-- <div class="FREE">
+        <article class="">
+          <h1 class="firstH">Work With SENDIT Today</h1>
+          <div class="wrap">
+          <div class="wrapper">
+            <h2>FOR INDIVIDUALS</h2>
+            <p class="firstHText">
+              Want to send regular parcels as individual customer ?
+            </p>
+          </div>
+          <div class="wrapper">
+            <h2>FOR BUSINESSES</h2>
+            <p class="firstHText">
+              Want to offer to your customers a high quality delivery
+              experience? ?
+            </p>
+          </div>
+          <div class="wrapper">
+            <h2>FOR SENDERS</h2>
+            <p class="firstHText">
+              Want to be part of our happy and independent couriers community ?
+            </p>
+          </div>
+          </div>
+        </article>
+      </div> -->
+    </section>
+<!-- 
+    <section class="afterherosection">
+        <p class="test">cool</p>
+    </section> -->
+
+    <script>
+      const toggleBtn = document.querySelector('.toggle_button')
+      const toggleBtnIcon = document.querySelector('.toggle-btn i')
+      const dropDownMenu = document.querySelector('.dropdown_menu')
+
+      toggleBtn.onclick =  () => {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ?'fa-solid fa-xmark'
+        :'fa-solid fa-bars'
+      }
+      </script>
+  </body>
+</html>
