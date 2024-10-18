@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>dashboard</title>
+</head>
+<body>
+    <% if(username) {%>
+        <h2 class="user">Hi <%- username %></h2>
+    <% } else{%>
+        <h2 class="user"> Welcome back!</h2>
+        <% } %>
+    <ul class="item">
+        <li class="items">dashboard</li>
+        <li class="items">create parcel order</li>
+        <li class="items">track parcel order</li>
+        <li class="items">status</li>
+    </ul>
+</body>
+</html>

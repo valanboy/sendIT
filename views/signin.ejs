@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <title>sign in</title>
+</head>
+<body>
+  <div class="container">
+    <div class="signinform">
+      <h2 class="header">sign in</h2>
+      <div class="errormssg">
+        <%- error %>
+      </div>
+      <form method="post" action="/signin">
+        <input type="text" name="email" placeholder="enter email adress">
+        <input type="password" name="password" placeholder="enter password">
+        <a href="#">forgot password?</a>
+        <input type="button" class="signinbtn" value="sign in">
+         </form>
+      <div class="signup">
+        <span class="signup">don't have an account? <label><a href="/signup">sign up</a></label></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
