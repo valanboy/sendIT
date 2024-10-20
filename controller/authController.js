@@ -110,8 +110,10 @@ catch(error){
 const dashboard = async (req, res)=>{
     //extract the username from the query parameter we were redirected from
     const username = req.query.username
+    const date = new Date().toLocaleDateString()
    res.render('dashboard',{
-    username: username
+    username: username,
+    todayDate: date
    })
 }
 

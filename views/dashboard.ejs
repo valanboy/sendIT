@@ -7,11 +7,12 @@
     <title>dashboard</title>
 </head>
 <body>
-    <nav>
-     <a class="signout" href="/signout">sign out</a>
+    <p class="todaydate">Today's  date  is  <%- `${todayDate}` %></p>
+   
+    <nav>  <a class="signout" href="/signout">sign out</a>
     </nav>
     <% if(username) {%>
-        <h2 class="user">Hi <%- username %></h2>
+        <h2 class="user">Hi <%- `${username.toUpperCase()}!` %></h2>
     <% } else{%>
         <h2 class="user"> Welcome back!</h2>
         <% } %>

@@ -43,6 +43,7 @@ nav,
   color: rgb(217, 217, 252);
 }
 
+
 /* nav bar bars  */
 .toggle_button{
   color: white;
@@ -155,14 +156,14 @@ font-size: 1.3rem;
   background-size: cover;
   background-position: center;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   color:rgb(255, 255, 255);
   /* justify-content: center; */
   /* display: flex; */
 }
 
 .herocontentEm{
-    font-size: 7rem;
+    font-size: 250%;
 }
 .herocontent{
     padding-top: 6rem;
@@ -172,8 +173,8 @@ font-size: 1.3rem;
     margin-left: 2%;
 }
 .whatsapplogo{
-    height: 70px;
-    width: 70px;
+    height: 9%;
+    width: 11%;
     position: fixed;
     margin-top: 9%;
     margin-left: 80%;
@@ -298,6 +299,8 @@ background-color: rgb(91, 91, 212);
   text-align: center;
   background-color: rgb(143, 143, 221);;
   height: 10vh;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
 }
 
 .item{
@@ -315,17 +318,24 @@ ul .items{
 }
 
 nav .signout{
-  margin-top: 1rem;
+  margin-top: 0.1rem;
   margin-bottom: 0.5rem;
 height: 50px;
 width: 70px;
+min-width: 70px;
 color: white;
 background-color: black;
 border-radius: 10px ;
-margin-left: 90%;
-left: 50%;
+margin-left: 80%;
 text-align: center;
 align-items: center;
-padding-top: 0.5rem;
+padding-top: 1rem;
 }
 
+.todaydate{
+  margin-top: 0.4rem;
+  color: rgb(216, 223, 250);
+  text-align: center;
+  font-size: 0.8rem;
+  word-spacing: 0.1rem;
+}
